@@ -4,3 +4,12 @@ var todoList = document.querySelector("#todo-list");
 var todoCountSpan = document.querySelector("#todo-count");
 
 var todos = ["Learn HTML", "Learn CSS", "Learn JavaScript"];
+function renderTodos(){
+    for(var i = 0; i< todos.length; i ++){
+    // create li element
+    // add todo text to li
+    // append list item into to do ul
+    <li></li>
+
+    }
+}
