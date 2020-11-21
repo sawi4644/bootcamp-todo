@@ -7,9 +7,13 @@ var todos = ["Learn HTML", "Learn CSS", "Learn JavaScript"];
 function renderTodos(){
     for(var i = 0; i< todos.length; i ++){
     // create li element
+    var li= document.createElement('li')
     // add todo text to li
+    todos[i]
     // append list item into to do ul
-    <li></li>
-
+    todoList.appendChild(li)
+    
     }
 }
+// calling function so itll run
+renderTodos()
