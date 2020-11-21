@@ -15,26 +15,43 @@ function renderTodos(){
     todos[i]
     // add text to li
     li.innerText = todos [i]
+    // add data index attribute
+    li.setAttribute('data-index', i )
+    // create button
+    var button = document.createElement("button")
+    button.innerText = "complete"
+    li.appendChild(button)
     // append list item into to do ul
     todoList.appendChild(li)
+  }
     
-    }
+
 }
+
 function addTodo(event){
     event.preventDefault()
     // get todoInput value
     var newTodo = todoInput.value
 
-    if(newTodo === ''){
-        return;
+    if(newTodo !== ''){
+        todos.push(newTodo)
+        todoInput.value = null
+        renderTodos()
     }
-    // push value into array of todos
-    todos.push(newTodo)
-    todoInput.value = null
-    renderTodos()
 
 }
 
+function removeTodo(event){
+    if(event.target.matches('button'))
+    // find index from li
+    var index = parseInt(target.parentNode.getAttribute('data-index'))
+    // remove the todo from the todos array
+    todos.splice(index ,1)
+    // rerender list
+    renderTodos()
+}
+
 todoForm.addEventListener('submit', addTodo)
+todoList.addEventListener('click', removeTodo )
 // calling function so itll run
 renderTodos()
